@@ -1,34 +1,35 @@
-# 🏗️ AWS 3-Tier Architecture - PetClinic 프로젝트
+# 🏗️ AWS 3 Tier Architecture - PetClinic Project
 
 ## 📋 프로젝트 개요
 
 소규모 온라인 쇼핑몰(애완용품 쇼핑몰)의 안정적인 서비스 운영을 위한 AWS 기반 3-Tier 아키텍처 구축 프로젝트입니다.
 
 ### 대상 서비스 정보
-- **업종**: 애완용품 쇼핑몰 (소규모)
-- **일평균 방문자**: 300명
-- **피크 타임**: 1,000 ~ 2,000명
-- **월평균 주문**: 30건
+- **업종** : 애완용품 쇼핑몰 (소규모)
+- **일평균 방문자** : 300명
+- **피크 타임** : 1,000 ~ 2,000명
+- **월평균 주문** : 30건
 
 ### 프로젝트 기간
-- **시작일**: 2025년 10월 1일
-- **종료일**: 2025년 10월 17일
-- **상태**: Completed
+- **시작일** : 2025년 10월 1일
+- **종료일** : 2025년 10월 17일
+- **상태** : Completed
 
 ### 참여자
 - 박세진
 - Seung Lo
 - 홍정호
+- 구인정
 
 ---
 
 ## 🎯 주요 목표
 
-1. **고가용성(High Availability)**: Multi-AZ 구성을 통한 장애 대응
-2. **자동 확장성(Auto Scaling)**: 트래픽 패턴에 따른 동적 리소스 조정
-3. **비용 최적화**: 시간대별 스케줄링을 통한 효율적인 자원 관리
-4. **보안**: 다층 보안 구성 (NACL, Security Group, Private Subnet)
-5. **모니터링**: Prometheus + Grafana를 통한 실시간 모니터링 및 알림
+1. **고가용성(High Availability)** : Multi-AZ 구성을 통한 장애 대응
+2. **자동 확장성(Auto Scaling)** : 트래픽 패턴에 따른 동적 리소스 조정
+3. **비용 최적화** : 시간대별 스케줄링을 통한 효율적인 자원 관리
+4. **보안** : 다층 보안 구성 (NACL, Security Group, Private Subnet)
+5. **모니터링** : Prometheus + Grafana를 통한 실시간 모니터링 및 알림
 
 ---
 
@@ -52,14 +53,14 @@
 ```
 
 ### 주요 AWS 서비스
-- **네트워크**: VPC, Subnet (Public/Private), NAT Gateway, Internet Gateway
-- **컴퓨팅**: EC2 Auto Scaling Groups, Launch Templates
-- **로드밸런싱**: Application Load Balancer (External/Internal)
-- **데이터베이스**: RDS MySQL (Multi-AZ)
-- **스토리지**: S3 (정적 컨텐츠)
-- **CDN**: CloudFront
-- **모니터링**: CloudWatch, Prometheus, Grafana
-- **보안**: WAF, Security Groups, NACL
+- **네트워크** : VPC, Subnet (Public/Private), NAT Gateway, Internet Gateway
+- **컴퓨팅** : EC2 Auto Scaling Groups, Launch Templates
+- **로드밸런싱** : Application Load Balancer (External/Internal)
+- **데이터베이스** : RDS MySQL (Multi-AZ)
+- **스토리지** : S3 (정적 컨텐츠)
+- **CDN** : CloudFront
+- **모니터링** : CloudWatch, Prometheus, Grafana
+- **보안** : WAF, Security Groups, NACL
 
 ---
 
@@ -110,10 +111,10 @@
 ## 🔄 Auto Scaling 정책
 
 ### 동적 Auto Scaling
-- **Scale-out 조건**: CPU 사용률 50% 이상
-- **Scale-in 조건**: CPU 사용률 30% 이하
-- **최소 인스턴스**: 2대 (고가용성 유지)
-- **최대 인스턴스**: 8대 (비용 통제)
+- **Scale-out 조건** : CPU 사용률 50% 이상
+- **Scale-in 조건** : CPU 사용률 30% 이하
+- **최소 인스턴스** : 2대 (고가용성 유지)
+- **최대 인스턴스** : 8대 (비용 통제)
 
 ### 시간대별 스케줄링
 
@@ -130,24 +131,24 @@
 ## 🛡️ 보안 구성
 
 ### 네트워크 보안
-- **Public Subnet**: External ALB만 배치
-- **Private Subnet**: WEB, WAS, DB 모두 Private 영역에 배치
-- **NAT Gateway**: AZ별 독립 NAT (크로스 AZ 비용 절감)
+- **Public Subnet** : External ALB만 배치
+- **Private Subnet** : WEB, WAS, DB 모두 Private 영역에 배치
+- **NAT Gateway** : AZ별 독립 NAT (크로스 AZ 비용 절감)
 
 ### 보안 계층
-1. **CloudFront + WAF**: DDoS 방어, SQL Injection 차단
-2. **NACL**: 서브넷 레벨 방화벽
-3. **Security Group**: 인스턴스 레벨 방화벽
-4. **IAM Role**: 최소 권한 원칙 적용
+1. **CloudFront + WAF** : DDoS 방어, SQL Injection 차단
+2. **NACL** : 서브넷 레벨 방화벽
+3. **Security Group** : 인스턴스 레벨 방화벽
+4. **IAM Role** : 최소 권한 원칙 적용
 
 ---
 
 ## 📊 모니터링 구성
 
 ### 메트릭 수집
-- **Node Exporter**: EC2 인스턴스 시스템 메트릭
-- **Prometheus**: 메트릭 수집 및 저장
-- **Grafana**: 시각화 및 대시보드
+- **Node Exporter** : EC2 인스턴스 시스템 메트릭
+- **Prometheus** : 메트릭 수집 및 저장
+- **Grafana** : 시각화 및 대시보드
 
 ### 주요 모니터링 지표
 - CPU 사용률
@@ -162,12 +163,12 @@
 ## 🎯 SLO (Service Level Objective)
 
 ### 가용성 목표
-- **SLO**: 99.9% (30일 롤링 기준)
-- **오류 예산**: 0.1%
+- **SLO** : 99.9% (30일 롤링 기준)
+- **오류 예산** : 0.1%
 
 ### 성능 목표
-- **응답 시간**: p95 ≤ 400ms
-- **체크아웃 성공률**: ≥ 98.5%
+- **응답 시간** : p95 ≤ 400ms
+- **체크아웃 성공률** : ≥ 98.5%
 
 ### 트래픽 가정
 | 시나리오 | 인당 요청빈도 | RPS | 30일 총 요청 | 오류예산 (99.9%) |
@@ -200,9 +201,9 @@
 ## 📈 부하 테스트 결과
 
 ### K6 테스트 환경
-- **가상 사용자**: 100명
-- **테스트 기간**: 5분
-- **시나리오**: POST (고객 정보 입력), GET (고객 정보 조회)
+- **가상 사용자** : 800 ~ 1000명
+- **테스트 기간** : 30분
+- **시나리오** : POST (고객 정보 입력), GET (고객 정보 조회)
 
 ### 테스트 결과
 - Auto Scaling이 정상 작동하여 부하에 따라 자동으로 인스턴스 증설
@@ -213,11 +214,11 @@
 
 ## 💡 주요 학습 포인트
 
-1. **ALB 구성의 복잡성**: External/Internal ALB의 포트 매핑 이해
-2. **Private Subnet 운영**: NAT Gateway를 통한 아웃바운드 통신
-3. **Auto Scaling 정책**: 동적 정책과 스케줄 기반 정책의 조합
-4. **Prometheus 통합**: ASG 환경에서의 서비스 디스커버리
-5. **비전공자 친화적 문서화**: 모든 설정을 단계별로 상세히 기록
+1. **ALB 구성의 복잡성** : External/Internal ALB의 포트 매핑 이해
+2. **Private Subnet 운영** : NAT Gateway를 통한 아웃바운드 통신
+3. **Auto Scaling 정책** : 동적 정책과 스케줄 기반 정책의 조합
+4. **Prometheus 통합** : ASG 환경에서의 서비스 디스커버리
+5. **비전공자 친화적 문서화** : 모든 설정을 단계별로 상세히 기록
 
 ---
 
@@ -229,21 +230,3 @@
 - [ ] 컨테이너화 (ECS/EKS) 검토
 - [ ] 비용 최적화 추가 분석
 - [ ] 재해 복구(DR) 전략 수립
-
----
-
-## 🤝 기여
-
-프로젝트에 대한 피드백이나 개선 제안은 언제든 환영합니다.
-
----
-
-## 📄 라이선스
-
-이 프로젝트는 학습 및 참고 목적으로 작성되었습니다.
-
----
-
-## 📞 문의
-
-프로젝트 관련 문의사항이 있으시면 Issues를 통해 연락해 주세요.
