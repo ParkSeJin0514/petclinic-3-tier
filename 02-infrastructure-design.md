@@ -8,7 +8,7 @@
 
 ---
 
-## 🎯 AWS 3-Tier Architecture 개요
+## 🎯 AWS 3 Tier Architecture 개요
 
 본 프로젝트는 고가용성, 확장성, 보안을 고려한 3계층 아키텍처를 AWS에 구현합니다.
 
